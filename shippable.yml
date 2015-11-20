@@ -2,7 +2,16 @@
 language: go
 # version numbers
 go:
-- 1.5
+- 1.4
+
+# Shippable is broken for Go 1.5.
+# See https://github.com/Shippable/support/issues/1837
+install:
+  - wget -q -O ~/go.tgz https://storage.googleapis.com/golang/go1.5.1.linux-amd64.tar.gz
+  - tar -C $HOME -xzf ~/go.tgz
+  - export GOROOT=$HOME/go
+  - export PATH=$SHIPPABLE_GOPATH/bin:$HOME/go/bin:$PATH
+  - go version
 
 # environment variable
 env:
