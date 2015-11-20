@@ -4,4 +4,8 @@ language: go
 go:
 - release
 
+# environment variable
+env:
+ - GO15VENDOREXPERIMENT=1
+
 script: go test -v ./...
