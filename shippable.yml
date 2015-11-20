@@ -2,7 +2,7 @@
 language: go
 # version numbers
 go:
-- release
+- 1.5.1
 
 # environment variable
 env:
